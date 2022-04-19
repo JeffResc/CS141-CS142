@@ -1,0 +1,7 @@
+Jeff Rescignano
+CS141 - Lab #1
+
+1.) `ls` does not show anything because no files exist within the newly created directory.
+2.) The command does not perform as intended because the `docs` directory does not exist so the `cp` command copied the file to a new file named `docs` with no file extension. If the `docs` directory existed, it would copy the file to `file1.txt` within the `docs` folder.
+3.) `file1.txt` no longer exists because it was renamed using the `mv` command.
+4.) The command does not work because the directory has files in it. In order to remove the directory using this command, all the files inside the directory must be removed first.

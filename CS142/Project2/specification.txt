@@ -1,0 +1,55 @@
+SoccerManager
+
+
+SPECIFICATION
+
+
+OVERVIEW
+
+A simple program that allows you to manage a soccer roster for a summer league.
+
+
+DETAILS
+
+The program interacts with the user as shown in the following example:
+
+Soccer Manager
+-------------------------------------------------------------------------------------------------------------------
+ Player Name:   Apple, First
+ Player Year:   2007 (U14)
+ Player Status: Paid
+
+-------------------------------------------------------------------------------------------------------------------
+(1)[Start season] (2)[Add player] (3)[Search] (4)[Prev] (5)[Next] (6)[Edit] (7)[List] (8)[Stats] (9)[Save & Quit]
+-------------------------------------------------------------------------------------------------------------------
+Command #:
+
+The program begins by listing the first player in alphabetical order, if there are no players, the main view will be blank.
+The program then prompts the user to input a command number, which are outlined in the image above. Each of the commands are documented below:
+
+1: Allows the user to create a new season. You must provide the year of the new season.
+
+2: Add a player, the interface will prompt you to add a first and last name, a keyword and a birth year for the player.
+
+3: Will allow you to search all players. The search query will search first names, last names and keywords.
+
+4: Will return to the previous player when viewing a single player.
+
+5: Will jump to the next player when viewing a single player.
+
+6: Will allow you to edit the currently displayed player when viewing a single player.
+   If no value is given, it will automatically not change the value.
+
+7: Will list all players in the database.
+
+8: Will list statistics about all players in the database including the number of paid vs unpaid along with the number of users in each category.
+
+9: Saves all edited information to the database file and quits the program.
+
+0: This option is not shown in the figure above. This will be shown on certain pages and will allow the player to return back to the home screen.
+
+
+NOTES FOR LATER VERSIONS
+
+Add more error-checking in validating inputted data. The year is currently validated when starting a new season, but that is about it.
+Also allow for the customization of the database name along will loading from different databases.

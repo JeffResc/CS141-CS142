@@ -1,0 +1,121 @@
+SoccerManager
+
+
+DESIGN DOCUMENT
+
+
+COMPONENT: class Buffer
+
+Allows for reading and writing to the database along with providing an interface for the SoccerManager class to access information in the database.
+
+Public method:
+
+o void defaultDisplay() const
+
+    Shows the default display that is shown when the program is first opened.
+
+o void statsDisplay() const
+
+    Display the statistics page.
+
+o void listPlayers() const
+
+    Shows a view listing all players in the database.
+
+o void previousPlayer()
+
+    Returns to the previous player. Also runs displayedPlayer--.
+
+o bool insertPlayer(Player)
+
+    Inserts a new player to the list of players. Takes a player struct as an argument. Returns if the insert was successful or not.
+
+o void displaySearchResults()
+
+    Displays the search results stored in the searchResults vector.
+
+o void saveAllToFile()
+
+    Saves everything from the players vectors to the database.
+
+o void clearPlayers()
+
+    Removes all players from the players vectors. Used in the new season command.
+
+o Player getCurrentPlayer()
+
+    Allows other methods to get a class instance of the current player being displayed. Gets player from index displayedPlayer in players vector.
+
+o bool editPlayer(Player)
+
+    Edits the current player from displayedPlayer and overrides it with the Player argument. Returns if the edit was successful or not.
+
+o bool searchPlayers(std::string)
+
+    Searches the player list for the specified search query. Sets results to the searchResults vector.
+
+o bool openDatabase()
+
+    Opens the database file and reads the values to the players vectors. Return if the file open was successful or not.
+
+o int displayMode = 0
+
+    The current display mode for SoccerManager to show. Usually correlates with the command number, but not always.
+
+o int currentYear = -1
+
+    The current year of the open season. Defaults to -1. Used when calculating the category and saves to the database file for next time.
+    No current interface to change the currentYear.
+
+Private method:
+
+o int displayedPlayer = 0
+
+    The current player that is being displayed on the interface.
+
+o std::string yearToCategory(int yr)
+
+    Converts a birth year to a category. Argument is the birth year of the player and it returns the category.
+
+o std::vector<Player> players
+
+    The main vector that stores the list of players for all methods to access.
+
+o std::vector<int> searchResults
+
+    The recorded search results recorded by searchPlayers. Accessed by displaySearchResults shortly after.
+
+o bool databaseOpen = false;
+
+    Boolean value on if the database is currently open. Used internally in the openDatabase method to prevent the database from being opened twice in one session.
+
+Collaborator: SoccerManager.
+
+
+COMPONENT: class SoccerManager
+
+A buffer for a simple file viewer.  Holds the lines of text and executes commands on them.  Displays the contents of the buffer.  See program specification for details on commands.
+
+Public methods:
+
+o void run()
+
+    Runs the main program. Used in `int main()`.
+
+Private methods:
+
+o void display()
+
+    Displays the main interface window. Used in `void run()`.
+
+o void execute_command(char command, bool & done)
+
+    Executes the command inputted by the user internally within the `void run()` method.
+
+o Buffer buffer_
+
+    Created the buffer instance from the buffer class.
+
+o std::string message_
+
+    If the string has a value, will be displayed at the top of the UI by the `display()` method. Otherwise, it is ignored.

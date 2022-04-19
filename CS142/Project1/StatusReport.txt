@@ -1,0 +1,3 @@
+Everything should be working except for when a line is more than double the window_length_.
+It will only be shorted once and that's it, I could not get a for or while loop working in order to fix this.
+In the interest of time, I've made it only do the process once.

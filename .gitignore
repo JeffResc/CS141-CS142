@@ -1,0 +1,18 @@
+# Ignore files without extensions (Linux executables)
+*
+!*/
+!*.*
+# Ignore standard executables
+*.out
+# Ignore the Visual Studio directory
+.vs/
+# Ignore Windows executables
+*.exe
+# Ignore PDFs
+*.pdf
+# Ignore URL shortcuts
+*.URL
+# Ignore Word documents
+*.docx
+# Ignore zip archives
+*.zip
